@@ -13,16 +13,33 @@ h1 {
   margin: 0;
 }
 
-.login-btn {
-  background-color: #3498db;
-  color: white;
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.login-btn, .register-btn {
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background-color: #3498db;
+  color: white;
 }
 
 .login-btn:hover {
   background-color: #2980b9;
+}
+
+.register-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.register-btn:hover {
+  background-color: #27ae60;
 } 
