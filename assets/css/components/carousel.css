@@ -1,0 +1,30 @@
+#carouselExampleCaptions {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.carousel-inner {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+} 
