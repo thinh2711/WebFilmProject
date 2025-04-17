@@ -1,0 +1,65 @@
+/* .nav-links {
+  background-color: #1f1f1f;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.nav-links a.active {
+  background-color: #3498db;
+  color: white;
+}  */
+  /* nav.css - style cho thanh điều hướng */
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #1e1e1e;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #f1c40f;
+    color: #1e1e1e;
+  }
+  
+  .nav-links a.active {
+    background-color: #f1c40f;
+    color: #1e1e1e;
+    font-weight: bold;
+  }
+  
