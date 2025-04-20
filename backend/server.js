@@ -1,10 +1,13 @@
-// backend/server.js
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const connectDB = require('./config/db'); // Gọi file connectDB đúng
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Gọi connectDB sớm trước khi khởi động app
+connectDB();
 
 // Middlewares
 app.use(cors());
@@ -16,5 +19,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
