@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,64 @@
       <input type="text" placeholder="Tên đăng nhập" required>
       <input type="password" placeholder="Mật khẩu" required>
       <button type="submit">Đăng ký</button>
+    </form> 
+    <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký</title>
+  <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+  <div class="register-container">
+    <h2>Đăng ký tài khoản</h2>
+    <form id="register-form">
+      <input type="text" name="fullname" placeholder="Họ và tên" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="username" placeholder="Tên đăng nhập" required>
+      <input type="password" name="password" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng ký</button>
     </form>
     <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
   </div>
+
+  <script>
+    const form = document.getElementById("register-form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fullname = form.fullname.value;
+      const email = form.email.value;
+      const username = form.username.value;
+      const password = form.password.value;
+
+      try {
+        const res = await fetch("http://localhost:5000/api/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, email, password }),
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          alert("Đăng ký thành công!");
+          console.log(data);
+        } else {
+          alert("Đăng ký thất bại: " + data.message);
+        }
+      } catch (err) {
+        alert("Có lỗi xảy ra khi đăng ký");
+        console.error(err);
+      }
+    });
+  </script>
 </body>
 </html>
