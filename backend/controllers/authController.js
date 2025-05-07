@@ -28,4 +28,18 @@ const registerUser = async (req, res) => {
   }
 };
 
-module.exports = { registerUser };
+const loginUser = async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.body.username });
+    if (!user) return res.status(401).json('Tài khoản không tồn tại');
+
+    const validPassword = await bcrypt.compare(req.body.password, user.password);
+    if (!validPassword) return res.status(401).json('Sai mật khẩu');
+
+    res.status(200).json({ message: 'Đăng nhập thành công', user });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+module.exports = { registerUser, loginUser };
